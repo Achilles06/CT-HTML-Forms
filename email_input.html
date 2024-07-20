@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Input Types</title>
+    <style>
+        form {
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="range"],
+        input[type="color"] {
+            margin-bottom: 20px;
+            padding: 8px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML5 Input Types</h1>
+
+    <!-- Task 1: Email Input -->
+    <form action="/submit-email" method="POST">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Task 2: Number Input -->
+    <form action="/submit-number" method="POST">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter a quantity" min="1" max="100" step="1" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Task 3: Date Input -->
+    <form action="/submit-date" method="POST">
+        <label for="date">Select a Date</label>
+        <input type="date" id="date" name="date" min="2023-01-01" max="2023-12-31" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Task 4: Range Input -->
+    <form action="/submit-range" method="POST">
+        <label for="range">Rate (1-10)</label>
+        <input type="range" id="range" name="range" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+        <output>5</output>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Task 5: Color Input -->
+    <form action="/submit-color" method="POST">
+        <label for="color">Select a Color</label>
+        <input type="color" id="color" name="color" value="#ff0000">
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
